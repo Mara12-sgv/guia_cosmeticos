@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mary Luz Ortegón Makeup - Servicios de maquillaje y estilismo">
+    <title>Mary Luz Ortegón Makeup</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo-circle">MO</div>
+            <div class="logo-text">
+                <h1>Mary Luz Ortegón</h1>
+                <span>MAKEUP</span>
+            </div>
+        </div>
+        <nav class="nav">
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">PROYECTO FINAL</p>
+                <h2>
+                    Mary Luz
+                    <span>Ortegón</span>
+                </h2>
+                <p class="hero-description">
+                    Estudiante de programación. Me encuentro aprendiendo programación y 
+                    desarrollando habilidades para crear soluciones digitales. 
+                    En esta pagina web verán mis servicios como Estilista y Maquilladora profesional.
+                </p>
+                <a href="#servicios" class="button">
+                    Ver servicios
+                </a>
+            </div>
+        </section>
+
+        <section id="servicios" class="section services-section">
+            <div class="section-header">
+                <p class="eyebrow">MIS SERVICIOS</p>
+                <h2>Productos y servicios</h2>
+                <p>Conoce las opciones disponibles y elige el servicio ideal para ti.</p>
+            </div>
+
+            <div id="services-container" class="services-container"></div>
+        </section>
+
+        <section class="section reservation-section">
+            <div class="section-header">
+                <p class="eyebrow">RESERVA VIA API</p>
+                <h2>Solicita tu cita</h2>
+                <p>Completa la información para registrar tu cita en el sistema de cosmetología.</p>
+            </div>
+
+            <form id="appointment-form" class="appointment-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="servicio">Servicio de Cosmetología</label>
+                    <select id="servicio" name="servicio" required>
+                        <option value="">Cargando servicios...</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fecha">Fecha</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hora">Hora</label>
+                        <input type="time" id="hora" name="hora" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="button submit-button">
+                    Solicitar cita (POST)
+                </button>
+
+                <div id="form-message" class="form-message" aria-live="polite"></div>
+            </form>
+        </section>
+
+        <section id="contacto" class="section contact-section">
+            <div class="section-header">
+                <p class="eyebrow">CONTACTO</p>
+                <h2>Mary Luz Ortegón Makeup</h2>
+                <p>Para información, disponibilidad y reservas, puedes comunicarte conmigo.</p>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-card">
+                    <div class="contact-icon">✉</div>
+                    <h3>Correo electrónico</h3>
+                    <p>maryortegin25@gmail.com</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">☎</div>
+                    <h3>Teléfono</h3>
+                    <p>+57 316 699 3591</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">✨</div>
+                    <h3>Especialidad</h3>
+                    <p>Maquillaje y estilismo</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Mary luz Ortegón Makeup</p>
+        <p>Proyecto Final </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
