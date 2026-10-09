@@ -5,7 +5,6 @@ const serviceSelect = document.getElementById("servicio");
 const appointmentForm = document.getElementById("appointment-form");
 const formMessage = document.getElementById("form-message");
 
-// Se ejecuta automáticamente al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
     cargarServicios();
 });
@@ -39,6 +38,7 @@ function mostrarServicios(servicios) {
         const precio = servicio.precio ?? servicio.price ?? 0;
         const duracion = servicio.duracion || servicio.tiempo || servicio.duration || "Consultar";
         const descripcion = servicio.descripcion || servicio.description || "Servicio de maquillaje y estilismo.";
+        
         card.innerHTML = `
             <span class="service-number">${String(index + 1).padStart(2, "0")}</span>
             <h3>${nombre}</h3>
@@ -61,7 +61,8 @@ function mostrarServicios(servicios) {
 
 async function cargarServicios() {
     try {
-        const response = await fetch(`${API_URL}/api/cosmeticos`);
+        const response = await fetch(`${API_URL}/api/cosmeticos`); 
+        
         if (!response.ok) {
             throw new Error(`Error HTTP: ${response.status}`);
         }
@@ -69,7 +70,7 @@ async function cargarServicios() {
         const servicios = Array.isArray(data) ? data : (data.servicios || data.data || data.resultados || []);
         mostrarServicios(servicios);
     } catch (error) {
-        console.log("API desconectada. Cargando servicios locales configurados...");
+        console.log("API de la universidad no detectada en Vercel. Cargando servicios locales de contingencia...");
         mostrarServiciosLocales();
     }
 }
@@ -120,7 +121,7 @@ if (appointmentForm) {
         const cita = { nombre, servicio, fecha, hora };
         
         try {
-            mostrarMensaje("Enviando solicitud...", "");
+            mostrarMensaje("Enviando solicitud a la API...", "");
             const response = await fetch(`${API_URL}/api/cosmeticos/citas`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -129,10 +130,10 @@ if (appointmentForm) {
             if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
             
             await response.json();
-            mostrarMensaje("¡Cita solicitada correctamente!", "success");
+            mostrarMensaje("¡Cita solicitada correctamente en la API del profesor!", "success");
             appointmentForm.reset();
         } catch (error) {
-            console.error("Error al crear la cita:", error);
+            console.error("Error al conectar con la API central:", error);
             mostrarMensaje("Cita guardada localmente (Simulado de contingencia).", "success");
         }
     });
