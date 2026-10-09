@@ -1,0 +1,21 @@
+{
+  "name": "guia_cosmeticos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mara12-sgv/guia_cosmeticos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Mara12-sgv/guia_cosmeticos/issues"
+  },
+  "homepage": "https://github.com/Mara12-sgv/guia_cosmeticos#readme"
+}
